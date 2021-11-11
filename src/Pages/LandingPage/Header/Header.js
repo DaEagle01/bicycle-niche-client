@@ -2,11 +2,11 @@ import React from "react";
 import "./Header.css";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-// import useAuth from "../../../Hooks/useAuth";
 import logo from "../../../images/logo.png";
+import useAuth from "../../../Hooks/useAuth";
 
 const Header = () => {
-  //   const { user, logOut } = useAuth();
+  const { user, logOut } = useAuth();
   return (
     <div>
       <Navbar className="" bg="light" expand="lg">
@@ -37,6 +37,12 @@ const Header = () => {
               <Link className="nav-bar text-primary mx-2" to="/explore">
                 Explore
               </Link>
+              {user?.email && (
+                <Link className="nav-bar text-primary mx-2" to="/dashboard">
+                  Dashboard
+                </Link>
+              )}
+
               <Link className="nav-bar text-primary mx-2" to="/about">
                 About us
               </Link>
@@ -44,32 +50,29 @@ const Header = () => {
                 Contact us
               </Link>
             </Nav>
-
             <Navbar.Text className="ps-5">
-              <Link to="/register" className="btn btn-info mx-3">
-                Signup
-              </Link>{" "}
-              <Link to="/login" className="btn btn-info">
-                Login
-              </Link>
-              {/* {user?.displayName || user?.email ? (
-                <Link to="/login" onClick={logOut} className="btn btn-info">
+              {user?.displayName || user?.email ? (
+                <Link
+                  to="/login"
+                  onClick={logOut}
+                  className="btn btn-info font-bold"
+                >
                   Logout
                 </Link>
               ) : (
-                <Link to="/login" className="btn btn-info">
+                <Link to="/login" className="btn btn-info font-bold">
                   Login
                 </Link>
               )}
-              {user?.displayName || user?.email ? (
-                <p>
-                  Signed in as: <a href="#login">{user?.displayName} </a>
-                </p>
+            </Navbar.Text>
+            <Navbar.Text className="ps-2">
+              {user?.email ? (
+                <p className="text-dark fw-bold pt-3">{user?.displayName}</p>
               ) : (
-                <Link to="/signup" className="btn btn-info mx-3">
+                <Link to="/register" className="btn btn-info mx-3">
                   Signup
                 </Link>
-              )} */}
+              )}
             </Navbar.Text>
           </Navbar.Collapse>
         </Container>
