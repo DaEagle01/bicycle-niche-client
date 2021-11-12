@@ -89,7 +89,7 @@ const useFirebase = () => {
 
   const email = user?.email;
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${email}`)
+    fetch(`https://peaceful-peak-38584.herokuapp.com/users/${email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data?.admin));
   }, [user.email]);
@@ -97,7 +97,7 @@ const useFirebase = () => {
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
     console.log(user);
-    fetch("http://localhost:5000/users", {
+    fetch("https://peaceful-peak-38584.herokuapp.com/users", {
       method: method,
       headers: { "content-type": "application/json" },
       body: JSON.stringify(user),

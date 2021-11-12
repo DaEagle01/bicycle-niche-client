@@ -5,14 +5,14 @@ const AllOrders = () => {
   const [status, setStatus] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/orders")
+    fetch("https://peaceful-peak-38584.herokuapp.com/orders")
       .then((res) => res.json())
       .then((data) => setAllProduct(data));
   }, [status]);
 
   const handleDelete = (_id) => {
     if (window.confirm("Are you sure you want to delete it?")) {
-      fetch(`http://localhost:5000/orders/${_id}`, {
+      fetch(`https://peaceful-peak-38584.herokuapp.com/orders/${_id}`, {
         method: "DELETE",
         headers: { "content-type": "application/json" },
       })
@@ -26,8 +26,8 @@ const AllOrders = () => {
   };
 
   const handleStatus = (_id, singleProduct) => {
-    singleProduct.status = "Approved";
-    fetch(`http://localhost:5000/orders/${_id}`, {
+    singleProduct.status = "shipped";
+    fetch(`https://peaceful-peak-38584.herokuapp.com/orders/${_id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(singleProduct),

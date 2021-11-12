@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ExploreProducts = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://peaceful-peak-38584.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -26,11 +26,7 @@ const ExploreProducts = () => {
                 Beginner Friendly
               </h3>
               <div class="relative">
-                <img
-                  class="w-full rounded-xl"
-                  src={product.img}
-                  alt="Colors"
-                />
+                <img class="w-full rounded-xl" src={product.img} alt="Colors" />
                 <p class="absolute top-0 bg-yellow-300 text-gray-800 font-semibold py-1 px-3 rounded-br-lg rounded-tl-lg">
                   FREE
                 </p>
@@ -104,8 +100,6 @@ const ExploreProducts = () => {
               </div>
             </div>
           ))}
-
-          
         </div>
       </div>
     </div>
