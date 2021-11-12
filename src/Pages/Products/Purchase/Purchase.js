@@ -18,7 +18,7 @@ const Purchase = () => {
 
   const onSubmit = (data) => {
     // console.log(data);
-    // data.email = user.email;
+    data.img = product.img;
     data.bikeName = product.name;
     data.status = "pending";
     console.log(data);

@@ -87,6 +87,13 @@ const useFirebase = () => {
       .finally(() => setIsLoading(false));
   };
 
+  const email = user?.email;
+  useEffect(() => {
+    fetch(`http://localhost:5000/users/${email}`)
+      .then((res) => res.json())
+      .then((data) => setAdmin(data?.admin));
+  }, [user.email]);
+
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
     console.log(user);
@@ -101,6 +108,7 @@ const useFirebase = () => {
     registerUser,
     handleSignIn,
     handleGoogleSignIn,
+    admin,
     saveUser,
     user,
     logOut,

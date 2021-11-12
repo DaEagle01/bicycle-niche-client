@@ -90,6 +90,12 @@ const AllOrders = () => {
                         scope="col"
                         class="px-2 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
                       >
+                        Email
+                      </th>
+                      <th
+                        scope="col"
+                        class="px-2 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
+                      >
                         Date
                       </th>
                       <th
@@ -112,7 +118,7 @@ const AllOrders = () => {
                             <div class="flex-shrink-0">
                               <a href="#nothing" class="block relative">
                                 <img
-                                  alt="profile-pic"
+                                  alt="prod-pic"
                                   src={singleProduct?.img}
                                   class="mx-auto object-cover rounded-full h-10 w-10 "
                                 />
@@ -128,6 +134,11 @@ const AllOrders = () => {
                         <td class="px-2 py-3 border-b border-gray-200 bg-white text-sm">
                           <p class="text-gray-900 whitespace-no-wrap">
                             {singleProduct.bikeName}
+                          </p>
+                        </td>
+                        <td class="px-2 py-3 border-b border-gray-200 bg-white text-sm">
+                          <p class="text-gray-900 whitespace-no-wrap">
+                            {singleProduct.email}
                           </p>
                         </td>
                         <td class="px-2 py-3 border-b border-gray-200 bg-white text-sm">

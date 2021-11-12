@@ -6,7 +6,7 @@ import logo from "../../../images/logo.png";
 import useAuth from "../../../Hooks/useAuth";
 
 const Header = () => {
-  const { user, logOut } = useAuth();
+  const { user, admin, logOut } = useAuth();
   return (
     <div>
       <Navbar className="" bg="light" expand="lg">
@@ -27,7 +27,6 @@ const Header = () => {
           <Navbar.Collapse className="justify-content-end">
             <Nav
               className="mx-auto my-2 my-lg-0 justify-content-end"
-              // style={{ maxHeight: "100px" }}
               navbarScroll
             >
               <Link className="nav-bar text-primary mx-2" to="/home">
@@ -37,8 +36,19 @@ const Header = () => {
               <Link className="nav-bar text-primary mx-2" to="/explore">
                 Explore
               </Link>
-              {user?.email && (
-                <Link className="nav-bar text-primary mx-2" to="/dashboard">
+             
+              {admin ? (
+                <Link
+                  className="nav-bar text-primary mx-2"
+                  to="/dashboard/manageorders"
+                >
+                  Dashboard
+                </Link>
+              ) : (
+                <Link
+                  className="nav-bar text-primary mx-2"
+                  to="/dashboard/myorders"
+                >
                   Dashboard
                 </Link>
               )}

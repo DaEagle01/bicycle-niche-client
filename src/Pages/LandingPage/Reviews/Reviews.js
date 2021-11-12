@@ -51,7 +51,7 @@ const Reviews = () => {
                     <img
                       alt="testimonial"
                       class="inline-block object-cover object-center w-20 h-20 mt-8 rounded-full "
-                      src="https://pbs.twimg.com/profile_images/1426761460357738499/LtQow-mk_400x400.jpg"
+                      src={review.img}
                     />
                   </div>
                 </div>

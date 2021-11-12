@@ -28,7 +28,7 @@ const ExploreProducts = () => {
               <div class="relative">
                 <img
                   class="w-full rounded-xl"
-                  src={product.image}
+                  src={product.img}
                   alt="Colors"
                 />
                 <p class="absolute top-0 bg-yellow-300 text-gray-800 font-semibold py-1 px-3 rounded-br-lg rounded-tl-lg">
