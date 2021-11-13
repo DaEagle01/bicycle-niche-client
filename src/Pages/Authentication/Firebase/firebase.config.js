@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyDnzHI5qqk8eYQwVy4uGL3M9yFghPtPqZw",
-  authDomain: "bicycle-hub-6bbb8.firebaseapp.com",
-  projectId: "bicycle-hub-6bbb8",
-  storageBucket: "bicycle-hub-6bbb8.appspot.com",
-  messagingSenderId: "918526559539",
-  appId: "1:918526559539:web:57a767f273d72ce97d2a46",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 export default firebaseConfig;
