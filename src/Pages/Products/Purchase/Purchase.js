@@ -9,7 +9,7 @@ const Purchase = () => {
 
   const [product, setProduct] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${id}`)
+    fetch(`https://peaceful-peak-38584.herokuapp.com/products/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
@@ -23,7 +23,7 @@ const Purchase = () => {
     data.status = "pending";
     console.log(data);
 
-    fetch(`http://localhost:5000/products/${id}`, {
+    fetch(`https://peaceful-peak-38584.herokuapp.com/products/${id}`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

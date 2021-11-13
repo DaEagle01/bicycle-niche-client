@@ -19,7 +19,7 @@ const Review = () => {
     e.preventDefault();
     data.userImg = user?.photoURL;
     console.log(data);
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://peaceful-peak-38584.herokuapp.com/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

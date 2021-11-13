@@ -8,14 +8,14 @@ const MyOrder = () => {
   const email = user?.email;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/orders/${email}`)
+    fetch(`https://peaceful-peak-38584.herokuapp.com/orders/${email}`)
       .then((res) => res.json())
       .then((data) => setAllProduct(data));
   }, [status]);
 
   const handleDelete = (_id) => {
     if (window.confirm("Are you sure you want to delete it?")) {
-      fetch(`http://localhost:5000/orders/${_id}`, {
+      fetch(`https://peaceful-peak-38584.herokuapp.com/orders/${_id}`, {
         method: "DELETE",
         headers: { "content-type": "application/json" },
       })
