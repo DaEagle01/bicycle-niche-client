@@ -8,14 +8,14 @@ const MyOrder = () => {
   const email = user?.email;
 
   useEffect(() => {
-    fetch(`https://peaceful-peak-38584.herokuapp.com/orders/${email}`)
+    fetch(`http://localhost:5000/orders/${email}`)
       .then((res) => res.json())
       .then((data) => setAllProduct(data));
   }, [status]);
 
   const handleDelete = (_id) => {
     if (window.confirm("Are you sure you want to delete it?")) {
-      fetch(`https://peaceful-peak-38584.herokuapp.com/orders/${_id}`, {
+      fetch(`http://localhost:5000/orders/${_id}`, {
         method: "DELETE",
         headers: { "content-type": "application/json" },
       })
@@ -23,25 +23,12 @@ const MyOrder = () => {
         .then((data) => {
           if (data?.acknowledged) {
             setStatus(true);
+            console.log("order deleted ");
           }
         });
     }
   };
 
-  const handleStatus = (_id, singleProduct) => {
-    singleProduct.status = "shipped";
-    fetch(`https://peaceful-peak-38584.herokuapp.com/orders/${_id}`, {
-      method: "PUT",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(singleProduct),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data?.modifiedCount) {
-          setStatus(false);
-        }
-      });
-  };
   return (
     <div>
       <h1>this is my orders</h1>
@@ -105,7 +92,7 @@ const MyOrder = () => {
                         scope="col"
                         class="px-2 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
                       >
-                        Status
+                        Cancel
                       </th>
                       <th
                         scope="col"
@@ -149,22 +136,7 @@ const MyOrder = () => {
                             {singleProduct.date}
                           </p>
                         </td>
-                        <td class="px-2 py-3 border-b border-gray-200 bg-white text-sm">
-                          <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                            <span
-                              aria-hidden="true"
-                              class="absolute inset-0 bg-green-200 opacity-50 rounded-full"
-                            ></span>
-                            <button
-                              onClick={() =>
-                                handleStatus(singleProduct._id, singleProduct)
-                              }
-                              class="relative"
-                            >
-                              {singleProduct?.status}
-                            </button>
-                          </span>
-                        </td>
+
                         <td class="px-2 py-3 border-b border-gray-200 bg-white text-sm">
                           <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                             <span
@@ -175,7 +147,7 @@ const MyOrder = () => {
                               onClick={() => handleDelete(singleProduct._id)}
                               class="relative btn btn-danger rounded-pill"
                             >
-                              Delete
+                              Cancel
                             </button>
                           </span>
                         </td>

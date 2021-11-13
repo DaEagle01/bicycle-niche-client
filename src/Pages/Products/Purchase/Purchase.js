@@ -9,7 +9,7 @@ const Purchase = () => {
 
   const [product, setProduct] = useState([]);
   useEffect(() => {
-    fetch(`https://peaceful-peak-38584.herokuapp.com/products/${id}`)
+    fetch(`http://localhost:5000/products/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
@@ -23,7 +23,7 @@ const Purchase = () => {
     data.status = "pending";
     console.log(data);
 
-    fetch(`https://peaceful-peak-38584.herokuapp.com/products/${id}`, {
+    fetch(`http://localhost:5000/products/${id}`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -51,7 +51,7 @@ const Purchase = () => {
         <div className="row">
           <div className="col-md-6">
             <div>
-              <img className='w-3/4 mx-auto' src={product.img} alt="" />
+              <img className="w-3/4 mx-auto" src={product.img} alt="" />
             </div>
             <div className="mt-4 px-4 mb-5">
               <div>
@@ -118,7 +118,7 @@ const Purchase = () => {
               {" "}
               Purchase This
             </h2>
-            <form onSubmit={handleSubmit(onSubmit)} >
+            <form onSubmit={handleSubmit(onSubmit)}>
               <input
                 {...register("name")}
                 placeholder="Your Full Name"

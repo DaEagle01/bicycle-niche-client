@@ -3,6 +3,7 @@ import { Alert } from "react-bootstrap";
 import { useHistory, useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
+import Dashboard from "../../Dashboard/Dashboard/Dashboard";
 
 const Login = () => {
   const [data, setData] = useState({});
@@ -13,7 +14,8 @@ const Login = () => {
 
   const location = useLocation();
   const history = useHistory();
-  const redirect_uri = location.state?.from || "/home";
+  const redirect_uri =
+    location.state?.from || "/dashboard/myorders" || "/Dashboard/manageorders";
 
   const handleGoogleLogIn = () => {
     handleGoogleSignIn().then((result) => {

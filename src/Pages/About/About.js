@@ -10,88 +10,69 @@ const About = () => {
           Home &#62; <span className="text-warning"> About Us</span>{" "}
         </h3>
       </div>
+      <div>
+        <div class="text-center mb-">
+          <div className="container pt-10 text-left">
+            <h1 class="sm:text-3xl text-3xl font-bold title-font text-gray-900 mb-2">
+              <span className="text-yellow-500">Welcome To Herobike</span>
+            </h1>
+            <div className="flex  itmes-end">
+              <hr className="w-20" />{" "}
+              <img
+                className="w-20"
+                src="https://i.ibb.co/mzDyJBV/section-title-logo.png"
+                alt=""
+              />{" "}
+              <hr className="w-20" />{" "}
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="row container mt-5">
-        <div className="col-md-5">
+        <div className="col-md-5 mt-5">
           {" "}
-          <img
-            src="https://image.freepik.com/free-vector/cute-pink-bicycle-isolated_1284-43044.jpg"
-            alt="about"
-          />
+          <img src="https://i.ibb.co/bbTQH17/about-img-5.jpg" alt="about" />
         </div>
         <div className="col-md-7 px-5">
-          <h1 className="text-4xl font-bold my-4 text-warning">Travlio</h1>
+          <h1 className="text-4xl font-bold my-4 text-warning">HeroBike</h1>
           <p>
             {" "}
-            Since 1975, Travlio has been focused on bringing our customers the
-            best in esteem and quality travel game plans. We are enthusiastic
-            about movement and sharing the world’s marvels on the relaxation
-            travel side, and giving corporate explorers hello there contact
-            administrations to encourage their business travel needs.
-          </p>
-          <p>
-            We’re a worker-claimed travel organization secured by our qualities,
-            trustworthiness, and commitment to client benefit.
-          </p>
-          <p>
-            Our honor-winning organization reliably positions as a standout
-            amongst other offices in the nation (Travel Weekly, Business Travel
-            Weekly), and is the best individual from the renowned Signature
-            Travel Network, an overall association enabling us to give our
-            clients unmatched advantages.
-          </p>
-          <p>
-            Fulfilled workers lead to fulfilled clients. We know the development
-            and accomplishment of our organization relies on satisfying our
-            customer’s needs each day. That is additionally our guarantee.
+            Fast forward to the winter of 1975, two gentlemen met at a dimly lit
+            bar in a classic Wisconsin supper club called The Pine Knoll. As far
+            as Trek's founders, Dick Burke and Bevil Hogg, were concerned, they
+            were simply performing a time-honored ritual of business in
+            Wisconsin where friends and partners met over drinks to hash out the
+            day’s events, plan the future, and debate ideas good and bad. Over a
+            few beers, the men engaged in a deep debate over what to call their
+            fledgling bicycle company. Hogg favored Kestrel, after the bird of
+            prey. Burke preferred Trek because it called forth images of travel
+            and adventure. He must have known there was something remarkable
+            about the word, something that held the promise of longevity and
+            freedom and exploration and quality.
           </p>
         </div>
       </div>
-      <div className="row mt-5">
-        <div className="col-md-4">
-          <div class="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-900 w-64 m-auto relative">
-            <div class="w-full h-full text-center">
-              <div class="flex h-full flex-col justify-between">
-                <i class="fas fa-envelope-square text-7xl"></i>
-
-                <p class="text-gray-900 dark:text-white text-lg mt-4">Email</p>
-                <p class="dark:text-gray-50 text-gray-700 text-xl font-bold py-2 px-6">
-                  +8801629450417
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-4">
-          <div class="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-900 w-64 m-auto relative">
-            <div class="w-full h-full text-center">
-              <div class="flex h-full flex-col justify-between">
-                <i class="fas fa-phone-alt text-7xl"></i>
-
-                <p class="text-gray-900 dark:text-white text-lg mt-4">Phone</p>
-                <p class="dark:text-gray-50 text-gray-700 text-xl font-bold  py-2 px-6">
-                  +8801629450417
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-4">
-          <div class="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-900 w-64 m-auto relative">
-            <div class="w-full h-full text-center">
-              <div class="flex h-full flex-col justify-between">
-                <i class="fas fa-map-marker-alt text-7xl"></i>
-
-                <p class="text-gray-900 dark:text-white text-lg mt-4">
-                  Address{" "}
-                </p>
-                <p class="dark:text-gray-50 text-gray-700 text-xl font-bold  py-2">
-                  3 Edgar Buildings, <br /> England BA1 2FJ.
-                </p>
-              </div>
-            </div>
-          </div>
+      <div className="row container mt-2">
+        <div className="col-md-7 px-5">
+          <p>
+            The Bike Affair was opened in August 2009. Back then we were riders.
+            Recreational cycling was something that hadn't yet become mainstream
+            in Hyderabad, and there were no shop adressing biker's need . Yes,
+            there were shops selling bikes, but with every visit to the local
+            bike store, we realised how discouraging an interaction could be. In
+            time, our frustration became the motivation to open a bike shop
+            which will be honest to customer and their needs, give professional
+            support and service and which will encourage people to try and take
+            up bicycling as a way of life. Our focus was solving the problems
+            that we our self have faced as customer.
+          </p>
+        </div>{" "}
+        <div className="col-md-5">
+          {" "}
+          <img src="https://i.ibb.co/pyYhwHV/about-img-1.jpg" alt="about" />
         </div>
       </div>
+      
     </div>
   );
 };

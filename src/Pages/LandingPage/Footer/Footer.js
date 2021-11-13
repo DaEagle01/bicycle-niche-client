@@ -66,7 +66,7 @@ const Footer = () => {
                     <i class="fas fa-envelope fa-lg-3x fa-2x text-light mb-lg-3 my-2"></i>
                   </div>
                   <div>
-                    <p>admin@herobike.com</p>
+                    <p> help@herobike.com</p>
                   </div>
                 </div>
                 <div className="col-12 d-flex gap-5 justify-content-center align-items-center">
@@ -81,9 +81,7 @@ const Footer = () => {
                   <div>
                     <i class="fas fa-map-marker-alt fa-lg-3x fa-2x text-light mb-lg-3"></i>
                   </div>
-                  <div>
-                    3 Edgar Buildings, <br /> England BA1 2FJ.
-                  </div>
+                  <div>Newhall, California</div>
                 </div>
               </div>
             </div>

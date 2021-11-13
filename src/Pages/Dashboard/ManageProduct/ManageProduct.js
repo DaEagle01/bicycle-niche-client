@@ -6,14 +6,14 @@ const ManageProduct = () => {
   const [status, setStatus] = useState(null);
 
   useEffect(() => {
-    fetch("https://peaceful-peak-38584.herokuapp.com/products")
+    fetch("http://localhost:5000/products")
       .then((res) => res.json())
       .then((data) => setAllProduct(data));
   }, [status]);
 
   const handleDelete = (_id) => {
     console.log(_id);
-    fetch(`https://peaceful-peak-38584.herokuapp.com/products/${_id}`, {
+    fetch(`http://localhost:5000/products/${_id}`, {
       method: "DELETE",
       headers: { "content-type": "application/json" },
     })
@@ -21,6 +21,7 @@ const ManageProduct = () => {
       .then((data) => {
         if (data?.acknowledged) {
           setStatus(true);
+          console.log("product delelted");
         }
       });
   };

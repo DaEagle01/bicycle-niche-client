@@ -7,7 +7,7 @@ const UpdateProduct = () => {
   const { _id } = useParams();
   const [product, setProduct] = useState([]);
   useEffect(() => {
-    fetch(`https://peaceful-peak-38584.herokuapp.com/products/${_id}`)
+    fetch(`http://localhost:5000/products/${_id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
@@ -16,7 +16,7 @@ const UpdateProduct = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    fetch(`https://peaceful-peak-38584.herokuapp.com/products/${_id}`, {
+    fetch(`http://localhost:5000/products/${_id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

@@ -23,7 +23,7 @@ const MakeAdmin = () => {
     }
     const user = data?.email;
     const userEmail = { user };
-    fetch("https://peaceful-peak-38584.herokuapp.com/users/admin", {
+    fetch("http://localhost:5000/users/admin", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

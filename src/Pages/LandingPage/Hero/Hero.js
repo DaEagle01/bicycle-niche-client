@@ -14,7 +14,7 @@ const Hero = () => {
                   Long headline to turn <br class="hidden lg:block" /> your
                   visitors into users{" "}
                 </h1>
-                <p class="max-w-xl mx-auto mt-8 text-lg font-semibold leading-relaxed text-gray-300">
+                <p class="max-w-xl mx-auto mt-8 text-lg font-semibold leading-relaxed text-gray-100">
                   {" "}
                   Free and Premium themes, UI Kit's, templates and landing pages
                   built with Tailwind CSS, HTML &amp; Next.js.{" "}
