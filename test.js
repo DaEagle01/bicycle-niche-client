@@ -1,4 +1,4 @@
-<div class="rounded-lg shadow bg-base-200 drawer h-52">
+{/* <div class="rounded-lg shadow bg-base-200 drawer h-52">
   <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
   <div class="flex flex-col drawer-content">
     <div class="w-full navbar bg-base-300">
@@ -45,4 +45,4 @@
       </li>
     </ul>
   </div>
-</div>;
+</div>; */}

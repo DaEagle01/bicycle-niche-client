@@ -90,7 +90,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="bg-dark">
-          <p className="text-center p-lg-3 p-2 mt-3">
+          <p className="text-center p-lg- p-0 m-0">
             <small>
               Copyright &copy; 2021 All Rights Reserved, FahadCodes.
             </small>

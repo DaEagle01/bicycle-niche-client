@@ -39,7 +39,7 @@ const Purchase = () => {
 
   return (
     <div>
-      <div className="container">
+      <div className="container py-20">
         <div className="row">
           <div className="col-md-6"></div>
           <div className="col-md-6 mx-auto text-center">
@@ -51,7 +51,7 @@ const Purchase = () => {
         <div className="row">
           <div className="col-md-6">
             <div>
-              <img src={product.image} alt="" />
+              <img className='w-3/4 mx-auto' src={product.img} alt="" />
             </div>
             <div className="mt-4 px-4 mb-5">
               <div>
@@ -113,60 +113,60 @@ const Purchase = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-6 add-service">
-            <h2 className="text-center text-dark mb-4 fw-bold">
+          <div className="col-md-6 add-service px-3 bg-gray-50">
+            <h2 className="text-center text-dark m-4 fw-bold">
               {" "}
               Purchase This
             </h2>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} >
               <input
                 {...register("name")}
                 placeholder="Your Full Name"
-                className="border border-dark rounded-3 p-2"
+                className=" rounded-1 p-2 shadow-md "
               />
               <input
                 {...register("email")}
                 placeholder="Your Email"
-                className="border border-dark rounded-3 p-2"
+                className=" rounded-1 p-2 shadow-md"
               />
               <input
                 {...register("street")}
                 placeholder="Street"
-                className="border border-dark rounded-3 p-2"
+                className=" rounded-1 p-2 shadow-md"
               />
               <input
                 {...register("city")}
                 placeholder="City"
-                className="border border-dark rounded-3 p-2"
+                className=" rounded-1 p-2 shadow-md"
               />
               <input
                 {...register("country")}
                 placeholder="Country"
-                className="border border-dark rounded-3 p-2"
+                className=" rounded-1 p-2 shadow-md"
               />
               <input
                 type="number"
                 {...register("zip")}
                 placeholder="Zip Code"
-                className="border border-dark rounded-3 p-2"
+                className=" rounded-1 p-2 shadow-md"
               />
               <input
                 type="number"
                 {...register("number")}
                 placeholder="Your Phone Number"
-                className="border border-dark rounded-3 p-2"
+                className=" rounded-1 p-2 shadow-md"
               />
 
               <input
                 type="date"
                 {...register("date")}
                 placeholder="Price"
-                className="border border-dark rounded-3 p-2"
+                className=" rounded-1 p-2 shadow-md"
               />
 
               <select
                 {...register("Tickets Type")}
-                className="border border-dark rounded-3 p-2"
+                className=" rounded-1 p-2 shadow-md"
                 label="Tickets Type"
               >
                 <option value="Bus Travel">Normal Delivery</option>
@@ -176,7 +176,7 @@ const Purchase = () => {
               <textarea
                 {...register("others")}
                 placeholder="Others Optional"
-                className="border border-dark rounded-3 p-2"
+                className=" rounded-1 p-2 shadow-md"
               />
 
               <input

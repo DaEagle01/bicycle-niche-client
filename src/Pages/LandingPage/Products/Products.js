@@ -10,25 +10,30 @@ const Products = () => {
   }, []);
   return (
     <div>
-      <div>
-        <p>FEATURED BICYCLES</p>
-        <p>Find Your Next Bike</p>
-        <p>
-          Find the best bike for you from this awesome high quality bike
-          collection
-        </p>
-      </div>
-      <div class="min-h-screen bg-gradient-to-tr from-red-300 to-yellow-200 flex justify-center items-center py-20">
-        <div class="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 space-y-4 md:space-y-0">
+      <div
+        class="bg-gradient-to-tr from-gray-50 to-gray-100
+       mx-auto mt-5 pb-20"
+      >
+        <div className="container py-10 text-center">
+          <h5 className="text-green-800">FEATURED BICYCLES</h5>
+          <h1 className="md:text-5xl font-bold">Find Your Next Bike</h1>
+          <p>
+            Find the best bike for you from this awesome high quality bike
+            collection <br /> Welcome To Our HeroBike
+          </p>
+        </div>
+        <div class="md:px-1 md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 space-y-4 md:space-y-0 container">
           {products.slice(0, 6).map((product) => (
-            <div class="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
-              <h3 class="mb-3 text-xl font-bold text-indigo-600">
-                Beginner Friendly
-              </h3>
+            <div class=" bg-white px-4 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
               <div class="relative">
-                <img class="w-full rounded-xl" src={product.img} alt="bicyle" />
-                <p class="absolute top-0 bg-yellow-300 text-gray-800 font-semibold py-1 px-3 rounded-br-lg rounded-tl-lg">
-                  FREE
+                <img
+                  class="w-full rounded-xl mx-auto"
+                  style={{ width: "274px", height: "155px" }}
+                  src={product.img}
+                  alt="bicyle"
+                />
+                <p class="absolute top-0 bg-yellow-300 text-gray-800 font-semibold py-1 px-2 rounded-br-lg rounded-tl-lg">
+                  10% <br /> off
                 </p>
               </div>
               <h1 class="mt-4 text-gray-800 text-3xl font-bold cursor-pointer">
@@ -36,236 +41,36 @@ const Products = () => {
               </h1>
               <div class="my-4">
                 <div class="flex space-x-1 items-center">
-                  <span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-6 w-6 text-indigo-600 mb-1.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                  </span>
-                  <p>Rating</p>
-                </div>
-                <div class="flex space-x-1 items-center">
-                  <span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-6 w-6 text-indigo-600 mb-1.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    </svg>
-                  </span>
-                  <p> $ {product.price}</p>
-                </div>
-                <div class="flex space-x-1 items-center">
-                  <span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-6 w-6 text-indigo-600 mb-1.5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    </svg>
-                  </span>
                   <p>{product.details}</p>
                 </div>
-
-                <Link to={`purchase/${product._id}`}>
-                  <button class="mt-4 text-xl w-full text-white bg-indigo-600 py-1.5 rounded-xl shadow-lg">
+                <div class="">
+                  <p>
+                    <i class="fas fa-dollar-sign text-xl text-yellow-500"></i>{" "}
+                    <span className="text-2xl font-medium">
+                      {" "}
+                      {product.price}
+                    </span>
+                  </p>
+                </div>
+                <div class="flex space-x-1 my- items-center">
+                  <i class="fas fa-star text-xl text-yellow-400"></i>
+                  <i class="fas fa-star text-xl text-yellow-400"></i>
+                  <i class="fas fa-star text-xl text-yellow-400"></i>
+                  <i class="fas fa-star text-xl text-yellow-400"></i>
+                  <i class="fas fa-star-half  text-xl text-yellow-400"></i>{" "}
+                  <span className="text-yellow-600 font-medium"> (23)</span>
+                </div>
+                <Link
+                  to={`purchase/${product._id}`}
+                  style={{ textDecoration: "none" }}
+                >
+                  <div class="mt-4 mx-auto text-center text-xl w-4/6 font-medium text-white bg-yellow-500 py-1.5 rounded-xl shadow-lg ">
                     Buy Now
-                  </button>
+                  </div>
                 </Link>
               </div>
             </div>
           ))}
-
-          <>
-            {" "}
-            {/* <div class="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
-            <h3 class="mb-3 text-xl font-bold text-indigo-600">Intermediate</h3>
-            <div class="relative">
-              <img
-                class="w-full rounded-xl"
-                src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
-                alt="Colors"
-              />
-              <p class="absolute top-0 bg-yellow-300 text-gray-800 font-semibold py-1 px-3 rounded-br-lg rounded-tl-lg">
-                $12
-              </p>
-              <p class="absolute top-0 right-0 bg-yellow-300 text-gray-800 font-semibold py-1 px-3 rounded-tr-lg rounded-bl-lg">
-                %20 Discount
-              </p>
-            </div>
-            <h1 class="mt-4 text-gray-800 text-3xl font-bold cursor-pointer">
-              Write a Gatsby plugin using Typescript
-            </h1>
-            <div class="my-4">
-              <div class="flex space-x-1 items-center">
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6 text-indigo-600 mb-1.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </span>
-                <p>1:34:23 Minutes</p>
-              </div>
-              <div class="flex space-x-1 items-center">
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6 text-indigo-600 mb-1.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
-                </span>
-                <p>3 Parts</p>
-              </div>
-              <div class="flex space-x-1 items-center">
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6 text-indigo-600 mb-1.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                    />
-                  </svg>
-                </span>
-                <p>TypeScript</p>
-              </div>
-              <button class="mt-4 text-xl w-full text-white bg-indigo-600 py-1.5 rounded-xl shadow-lg">
-                Start Watching Now
-              </button>
-            </div>
-          </div>
-          <div class="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
-            <h3 class="mb-3 text-xl font-bold text-indigo-600">
-              Beginner Friendly
-            </h3>
-            <div class="relative">
-              <img
-                class="w-full rounded-xl"
-                src="https://images.unsplash.com/photo-1561835491-ed2567d96913?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
-                alt="Colors"
-              />
-              <p class="absolute top-0 bg-yellow-300 text-gray-800 font-semibold py-1 px-3 rounded-br-lg rounded-tl-lg">
-                $50
-              </p>
-            </div>
-            <h1 class="mt-4 text-gray-800 text-3xl font-bold cursor-pointer">
-              Advanced React Native for Sustainability
-            </h1>
-            <div class="my-4">
-              <div class="flex space-x-1 items-center">
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6 text-indigo-600 mb-1.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </span>
-                <p>1:34:23 Minutes</p>
-              </div>
-              <div class="flex space-x-1 items-center">
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6 text-indigo-600 mb-1.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
-                </span>
-                <p>3 Parts</p>
-              </div>
-              <div class="flex space-x-1 items-center">
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6 text-indigo-600 mb-1.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                    />
-                  </svg>
-                </span>
-                <p>Vanilla JS</p>
-              </div>
-              <button class="mt-4 text-xl w-full text-white bg-indigo-600 py-1.5 rounded-xl shadow-lg">
-                Buy Lesson
-              </button>
-            </div>
-          </div> */}
-          </>
         </div>
       </div>
     </div>

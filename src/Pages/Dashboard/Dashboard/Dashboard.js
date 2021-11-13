@@ -11,17 +11,18 @@ import AdminRoute from "../../Authentication/AdminRoute/AdminRoute";
 import AddProduct from "../AddProduct/AddProduct";
 import AllOrders from "../AllOrders/AllOrders";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
+import ManageProduct from "../ManageProduct/ManageProduct";
 import MyOrder from "../MyOrder/MyOrder";
 import Payment from "../Pay/Payment";
 import Review from "../Review/Review";
+import UpdateProduct from "../UpdateProduct/UpdateProduct";
 
 const Dashboard = () => {
   const { user, admin, logOut } = useAuth();
   let { path, url } = useRouteMatch();
   return (
     <div>
-      {/* <!-- component --> */}
-      <div class="flex flex-wrap bg-gray-100 w-full h-screen">
+      <div class="flex flex-wrap bg-gray-100 w-full pb-10">
         <div class="w-3/12 bg-white rounded p-3 shadow-lg">
           <div class="flex items-center space-x-4 p-2 mb-5">
             <img
@@ -53,33 +54,6 @@ const Dashboard = () => {
             </div>
           </div>
           <ul class="space-y-2 text-sm">
-            <>
-              {" "}
-              {/* <li>
-              <Link
-                to={`${url}`}
-                class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:shadow-outline"
-              >
-                <span class="text-gray-600">
-                  <svg
-                    class="h-5"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                </span>
-                <span>Dashboard</span>
-              </Link>
-            </li> */}
-            </>
             {!admin && (
               <>
                 <li>
@@ -206,7 +180,31 @@ const Dashboard = () => {
                         />
                       </svg>
                     </span>
-                    <span>Manage All Orders</span>
+                    <span>Manage Order</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to={`${url}/manageproducts`}
+                    class="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
+                  >
+                    <span class=" text-gray-600">
+                      <svg
+                        class="h-5"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                        />
+                      </svg>
+                    </span>
+                    <span>Manage Product</span>
                   </Link>
                 </li>
                 <li>
@@ -307,6 +305,12 @@ const Dashboard = () => {
               </AdminRoute>
               <AdminRoute exact path={`${path}/manageorders`}>
                 <AllOrders></AllOrders>
+              </AdminRoute>
+              <AdminRoute exact path={`${path}/manageproducts`}>
+                <ManageProduct></ManageProduct>
+              </AdminRoute>
+              <AdminRoute exact path={`${path}/manageproducts/:_id`}>
+                <UpdateProduct></UpdateProduct>
               </AdminRoute>
               <AdminRoute exact path={`${path}/addproduct`}>
                 <AddProduct></AddProduct>

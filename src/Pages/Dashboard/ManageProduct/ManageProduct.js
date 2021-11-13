@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-const AllOrders = () => {
+const ManageProduct = () => {
   const [allProduct, setAllProduct] = useState([]);
   const [status, setStatus] = useState(null);
 
   useEffect(() => {
-    fetch("https://peaceful-peak-38584.herokuapp.com/orders")
+    fetch("https://peaceful-peak-38584.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setAllProduct(data));
   }, [status]);
 
-  const handleDelete = (_id) => {
+  const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete it?")) {
-      fetch(`https://peaceful-peak-38584.herokuapp.com/orders/${_id}`, {
+      fetch(`https://peaceful-peak-38584.herokuapp.com/products/${id}`, {
         method: "DELETE",
         headers: { "content-type": "application/json" },
       })
@@ -23,21 +24,6 @@ const AllOrders = () => {
           }
         });
     }
-  };
-
-  const handleStatus = (_id, singleProduct) => {
-    singleProduct.status = "shipped";
-    fetch(`https://peaceful-peak-38584.herokuapp.com/orders/${_id}`, {
-      method: "PUT",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(singleProduct),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data?.modifiedCount) {
-          setStatus(false);
-        }
-      });
   };
 
   return (
@@ -78,36 +64,38 @@ const AllOrders = () => {
                         scope="col"
                         class="px-2 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
                       >
-                        User
+                        Name
                       </th>
                       <th
                         scope="col"
                         class="px-2 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
                       >
-                        Product
+                        Price
                       </th>
                       <th
                         scope="col"
                         class="px-2 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
                       >
-                        Email
+                        Rating
                       </th>
                       <th
                         scope="col"
                         class="px-2 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
                       >
-                        Date
+                        Detail
                       </th>
                       <th
                         scope="col"
                         class="px-2 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
                       >
-                        Status
+                        Update
                       </th>
                       <th
                         scope="col"
                         class="px-2 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
-                      ></th>
+                      >
+                        Delete
+                      </th>
                     </tr>
                   </thead>
                   {allProduct.map((singleProduct) => (
@@ -133,7 +121,7 @@ const AllOrders = () => {
                         </td>
                         <td class="px-2 py-3 border-b border-gray-200 bg-white text-sm">
                           <p class="text-gray-900 whitespace-no-wrap">
-                            {singleProduct.bikeName}
+                            $ {singleProduct.price}
                           </p>
                         </td>
                         <td class="px-2 py-3 border-b border-gray-200 bg-white text-sm">
@@ -143,24 +131,23 @@ const AllOrders = () => {
                         </td>
                         <td class="px-2 py-3 border-b border-gray-200 bg-white text-sm">
                           <p class="text-gray-900 whitespace-no-wrap">
-                            {singleProduct.date}
+                            {singleProduct.details}
                           </p>
                         </td>
-                        <td class="px-2 py-3 border-b border-gray-200 bg-white text-sm">
-                          <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                            <span
-                              aria-hidden="true"
-                              class="absolute inset-0 bg-green-200 opacity-50 rounded-full"
-                            ></span>
-                            <button
-                              onClick={() =>
-                                handleStatus(singleProduct._id, singleProduct)
-                              }
-                              class="relative"
-                            >
-                              {singleProduct?.status}
-                            </button>
-                          </span>
+
+                        <td class="px-1 py-2 border-b border-gray-200 bg-white text-sm">
+                          <Link to={`manageproducts/${singleProduct._id}`}>
+                            {" "}
+                            <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                              <span
+                                aria-hidden="true"
+                                class="absolute inset-0  bg-green-200 opacity-100 rounded-full"
+                              ></span>
+                              <button class="relative btn rounded-pill">
+                                Update
+                              </button>
+                            </span>
+                          </Link>
                         </td>
                         <td class="px-2 py-3 border-b border-gray-200 bg-white text-sm">
                           <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
@@ -172,7 +159,7 @@ const AllOrders = () => {
                               onClick={() => handleDelete(singleProduct._id)}
                               class="relative btn btn-danger rounded-pill"
                             >
-                              Reject
+                              Delete
                             </button>
                           </span>
                         </td>
@@ -185,66 +172,8 @@ const AllOrders = () => {
           </div>
         </div>
       </div>
-      <>
-        {/* <table class="min-w-full border-collapse block md:table">
-        <thead class="block md:table-header-group">
-          <tr class="border border-grey-500 md:border-none block md:table-row absolute -top-full md:top-auto -left-full md:left-auto  md:relative ">
-            <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">
-              Name
-            </th>
-            <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">
-              User Name
-            </th>
-            <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">
-              Email Address
-            </th>
-            <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">
-              Mobile
-            </th>
-            <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">
-              Actions
-            </th>
-          </tr>
-        </thead>
-        <tbody class="block md:table-row-group">
-          <tr class=" border border-grey-500 md:border-none block md:table-row">
-            <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
-              <span class="inline-block w-1/3 md:hidden font-bold">Name</span>
-              Jamal Rios
-            </td>
-            <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
-              <span class="inline-block w-1/3 md:hidden font-bold">
-                User Name
-              </span>
-              jrios1
-            </td>
-            <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
-              <span class="inline-block w-1/3 md:hidden font-bold">
-                Email Address
-              </span>
-              jrios@icloud.com
-            </td>
-            <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
-              <span class="inline-block w-1/3 md:hidden font-bold">Mobile</span>
-              582-3X2-6233
-            </td>
-            <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
-              <span class="inline-block w-1/3 md:hidden font-bold">
-                Actions
-              </span>
-              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-100 rounded">
-                Edit
-              </button>
-              <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded">
-                Delete
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table> */}
-      </>
     </div>
   );
 };
 
-export default AllOrders;
+export default ManageProduct;

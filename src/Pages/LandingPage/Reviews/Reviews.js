@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import Rating from "react-rating";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 
@@ -13,10 +16,18 @@ const Reviews = () => {
   return (
     <div className="container px-10">
       <div class="text-center mb-">
-        <h1 class="sm:text-3xl text-3xl font-bold title-font text-gray-900 mb-2">
-          <span className="text-pink-600">Testimonials</span>
-        </h1>
-
+        <div className="container pt-10 text-center">
+          <h1 class="sm:text-3xl text-3xl font-bold title-font text-gray-900 mb-2">
+            <span className="text-yellow-500">Testimonials</span>
+          </h1>
+          <h1 className="md:text-5xl font-semibold	">
+            Why Our Customer Love Herobike
+          </h1>
+          <p>
+            Find the best bike for you from this awesome high quality bike
+            collection <br /> Welcome To Our HeroBike
+          </p>
+        </div>
         <div class="flex mt-6 justify-center">
           <div class="w-16 h-1 rounded-full bg-pink-500 inline-flex"></div>
         </div>
@@ -31,13 +42,19 @@ const Reviews = () => {
         {reviews.map((review) => (
           <SwiperSlide>
             <div>
-              <div class="relative items-center w-full px- py-12 mx-auto md:px-1 lg:px-2 max-w-7xl border border-red">
+              <div class="relative items-center w-full px- py-12 mx-auto md:px-1 lg:px-2 max-w-7xl ">
                 <div class="grid grid-cols-1 gap-6 lg:grid-cols-1">
                   <div class="flex flex-col w-full max-w-lg text-left lg:mx-auto">
                     <p class="mx-auto text-black leading-relaxed text-gray-900">
                       {" "}
                       {review.description}{" "}
                     </p>
+                    <Rating
+                      initialRating={review.rating}
+                      emptySymbol="far fa-star icon-color text-yellow-500"
+                      fullSymbol="fas fa-star icon-color text-yellow-500"
+                      readonly
+                    ></Rating>
                     <h2 class="mt-4 text-xs font-semibold tracking-widest text-blue-500 uppercase ">
                       {review.name}
 
@@ -49,7 +66,7 @@ const Reviews = () => {
                       </span>
                     </h2>
                     <img
-                      alt="testimonial"
+                      alt="Customer"
                       class="inline-block object-cover object-center w-20 h-20 mt-8 rounded-full "
                       src={review.img}
                     />
