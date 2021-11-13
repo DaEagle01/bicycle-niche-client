@@ -70,9 +70,9 @@ const MyOrder = () => {
           </div>
         </div>
 
-        <div class="container mx-auto px-4 sm:px-8 max-w-3xl">
+        <div class="container mx-auto md:px-4 sm:px-8 max-w-3xl">
           <div class="py-8">
-            <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+            <div class="-mx-4 sm:-mx-8 md:px-4 sm:px-8 py-4 overflow-x-auto">
               <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
                 <table class="min-w-full leading-normal">
                   <thead>

@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams,
-} from "react-router-dom";
+import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 import AdminRoute from "../../Authentication/AdminRoute/AdminRoute";
 import AddProduct from "../AddProduct/AddProduct";
@@ -21,20 +15,20 @@ const Dashboard = () => {
   const { user, admin, logOut } = useAuth();
   let { path, url } = useRouteMatch();
   return (
-    <div>
+    <div className="md:container mx-auto">
       <div class="flex flex-wrap bg-gray-100 w-full pb-10">
         <div class="w-3/12 bg-white rounded p-3 shadow-lg">
-          <div class="flex items-center space-x-4 p-2 mb-5">
+          <div class="md:flex items-center space-x-4 p-2 mb-5">
             <img
               class="h-12 rounded-full"
               src={user?.photoURL}
               alt={user?.displayName}
             />
-            <div>
-              <h4 class="font-semibold text-lg text-gray-700 capitalize font-poppins tracking-wide">
+            <div className="md:ml-6">
+              <h4 class="font-semibold text-lg text-gray-700 capitalize font-poppins tracking-wide md:ml-6 -ml-6">
                 {user?.displayName}
               </h4>
-              <span class="text-sm tracking-wide flex items-center space-x-1">
+              <span class="text-sm tracking-wide flex items-center space-x-1 -ml-6 md:ml-6">
                 <svg
                   class="h-4 text-green-500"
                   xmlns="http://www.w3.org/2000/svg"
@@ -49,11 +43,11 @@ const Dashboard = () => {
                     d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                   />
                 </svg>
-                <span class="text-gray-600">Verified</span>
+                <span class="text-gray-600 ">Verified</span>
               </span>
             </div>
           </div>
-          <ul class="space-y-2 text-sm">
+          <ul class="space-y-2 -ml-14 md:m-0 text-sm">
             {!admin && (
               <>
                 <li>

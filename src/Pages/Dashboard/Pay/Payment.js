@@ -4,25 +4,25 @@ import "./Payment.css";
 const Payment = () => {
   return (
     <div>
-      <div class="bg-gray-100 flex items-center justify-center px-5 pb-10 pt-16">
+      <div class="bg-gray-100 flex items-center justify-center md:px-5 px- md:pb-10 md:pt-16 pt-8">
         <div
-          class="w-full mx-auto rounded-lg bg-white shadow-lg p-5 text-gray-700"
+          class="w-full mx-auto rounded-lg bg-white shadow-lg p-3 text-gray-700"
           style={{ maxWidth: "600px" }}
         >
-          <div class="w-full pt-1 pb-5">
+          <div class="w-full pt-1 pb-3 md:pb-5">
             <div class="bg-indigo-500 text-white overflow-hidden rounded-full w-20 h-20 -mt-16 mx-auto shadow-lg flex justify-center items-center">
               <i class="mdi mdi-credit-card-outline text-3xl"></i>
             </div>
           </div>
           <div class="mb-10">
-            <h1 class="text-center font-bold text-xl uppercase">
+            <h1 class="text-center font-bold md:text-xl text-lg uppercase">
               Secure payment info
             </h1>
-            <h1 class="text-center font-bold text-xl text-purple-600 uppercase">
+            <h1 class="text-center font-bold md:text-xl text-base text-purple-600 uppercase">
               Payment system coming soon.
             </h1>
           </div>
-          <div class="mb-3 flex -mx-2">
+          <div class="mb-3 flex md:flex-row flex-col -mx-2">
             <div class="px-2">
               <label for="type1" class="flex items-center cursor-pointer">
                 <input
@@ -34,7 +34,7 @@ const Payment = () => {
                 />
                 <img
                   src="https://leadershipmemphis.org/wp-content/uploads/2020/08/780370.png"
-                  class="h-8 ml-3"
+                  class="h-8 ml-1 p-1"
                   alt=""
                 />
               </label>
@@ -49,7 +49,7 @@ const Payment = () => {
                 />
                 <img
                   src="https://www.sketchappsources.com/resources/source-image/PayPalCard.png"
-                  class="h-8 ml-3"
+                  class="h-8 ml-3 "
                   alt=""
                 />
               </label>

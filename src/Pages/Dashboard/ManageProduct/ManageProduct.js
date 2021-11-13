@@ -11,20 +11,21 @@ const ManageProduct = () => {
       .then((data) => setAllProduct(data));
   }, [status]);
 
-  const handleDelete = (id) => {
-    if (window.confirm("Are you sure you want to delete it?")) {
-      fetch(`https://peaceful-peak-38584.herokuapp.com/products/${id}`, {
-        method: "DELETE",
-        headers: { "content-type": "application/json" },
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data?.acknowledged) {
-            setStatus(true);
-          }
-        });
-    }
+  const handleDelete = (_id) => {
+    console.log(_id);
+    fetch(`https://peaceful-peak-38584.herokuapp.com/products/${_id}`, {
+      method: "DELETE",
+      headers: { "content-type": "application/json" },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data?.acknowledged) {
+          setStatus(true);
+        }
+      });
   };
+  // if (window.confirm("Are you sure you want to delete it?")) {
+  // }
 
   return (
     <div>
