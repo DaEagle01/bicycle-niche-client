@@ -1,4 +1,5 @@
-.nav-bar {
+.nav-bar,
+Link {
   text-decoration: none;
   list-style: none;
   font-weight: 600;

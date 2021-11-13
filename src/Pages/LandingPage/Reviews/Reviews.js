@@ -21,19 +21,15 @@ const Reviews = () => {
             <span className="text-yellow-500">Testimonials</span>
           </h1>
           <h1 className="md:text-5xl font-semibold	">
-            Why Our Customer Love Herobike
+            Why Our Customers Love Herobike
           </h1>
-          <p>
-            Find the best bike for you from this awesome high quality bike
-            collection <br /> Welcome To Our HeroBike
-          </p>
         </div>
         <div class="flex mt-6 justify-center">
-          <div class="w-16 h-1 rounded-full bg-pink-500 inline-flex"></div>
+          <div class="w-16 h-1 rounded-full bg-yellow-600 inline-flex"></div>
         </div>
       </div>
       <Swiper
-        spaceBetween={10}
+        spaceBetween={15}
         slidesPerView={3}
         centeredSlides
         onSlideChange={() => console.log("slide change")}
@@ -55,21 +51,23 @@ const Reviews = () => {
                       fullSymbol="fas fa-star icon-color text-yellow-500"
                       readonly
                     ></Rating>
-                    <h2 class="mt-4 text-xs font-semibold tracking-widest text-blue-500 uppercase ">
-                      {review.name}
-
-                      <span
-                        href="#"
-                        class="font-semibold text-gray-900 lg:mb-0"
-                      >
-                        from {review.place}
-                      </span>
-                    </h2>
-                    <img
-                      alt="Customer"
-                      class="inline-block object-cover object-center w-20 h-20 mt-8 rounded-full "
-                      src={review.img}
-                    />
+                    <div className="flex justify-center items-center md:gap-3 gap-1">
+                      <img
+                        alt="Customer"
+                        class="inline-block object-cover object-center md:w-16 md:h-16 w-10  mt-8 rounded-full "
+                        src={review.img}
+                      />{" "}
+                      <h2 class="mt-4 text-xs font-semibold tracking-widest text-blue-500  mr-4">
+                        {review.name}
+                        &nbsp;
+                        <span
+                          href="#"
+                          class="font-semibold text-gray-900 lg:mb-0"
+                        >
+                          from {review.place}
+                        </span>
+                      </h2>{" "}
+                    </div>
                   </div>
                 </div>
               </div>

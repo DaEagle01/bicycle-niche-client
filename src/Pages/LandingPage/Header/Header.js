@@ -9,7 +9,7 @@ const Header = () => {
   const { user, admin, logOut } = useAuth();
   return (
     <div>
-      <Navbar className="" bg="light" expand="lg">
+      <Navbar className="" bg="" expand="lg">
         <Container>
           <Navbar.Brand href="#home">
             <Link to="/home">
@@ -26,51 +26,66 @@ const Header = () => {
 
           <Navbar.Collapse className="justify-content-end">
             <Nav
-              className="mx-auto my-2 my-lg-0 justify-content-end"
+              className="mx-auto my-2 my-lg-0 justify-content-end "
               navbarScroll
             >
-              <Link className="nav-bar text-primary mx-2" to="/home">
+              <Link
+                className="nav-bar  mx-2 text-yellow-600 hover:text-yellow-400 "
+                to="/home"
+              >
                 Home
               </Link>
 
-              <Link className="nav-bar text-primary mx-2" to="/explore">
+              <Link
+                className="nav-bar  mx-2 text-yellow-600 hover:text-yellow-400 "
+                to="/explore"
+              >
                 Explore
               </Link>
-             
+
               {admin ? (
                 <Link
-                  className="nav-bar text-primary mx-2"
+                  className="nav-bar mx-2 text-yellow-600 hover:text-yellow-400 "
                   to="/dashboard/manageorders"
                 >
                   Dashboard
                 </Link>
               ) : (
                 <Link
-                  className="nav-bar text-primary mx-2"
+                  className="nav-bar  mx-2 text-yellow-600 hover:text-yellow-400 "
                   to="/dashboard/myorders"
                 >
                   Dashboard
                 </Link>
               )}
 
-              <Link className="nav-bar text-primary mx-2" to="/about">
+              <Link
+                className="nav-bar  mx-2 text-yellow-600 hover:text-yellow-400 "
+                to="/about"
+              >
                 About us
               </Link>
-              <Link className="nav-bar text-primary mx-2" to="/contact">
+              <Link
+                className="nav-bar  mx-2 text-yellow-600 hover:text-yellow-400 "
+                to="/contact"
+              >
                 Contact us
               </Link>
             </Nav>
             <Navbar.Text className="ps-5">
-              {user?.displayName || user?.email ? (
+              {user?.email ? (
                 <Link
                   to="/login"
                   onClick={logOut}
-                  className="btn btn-info font-bold"
+                  className="btn btn-warning font-extrabold hover:bg-yellow-400  hover:text-yellow-400  font-bold"
                 >
                   Logout
                 </Link>
               ) : (
-                <Link to="/login" className="btn btn-info font-bold">
+                <Link
+                  to="/login"
+                  className="btn  btn-warning hover:bg-yellow-300  hover:text-yellow-400 font-bold"
+                >
                   Login
                 </Link>
               )}
@@ -79,7 +94,10 @@ const Header = () => {
               {user?.email ? (
                 <p className="text-dark fw-bold pt-3">{user?.displayName}</p>
               ) : (
-                <Link to="/register" className="btn btn-info mx-3">
+                <Link
+                  to="/register"
+                  className="btn  btn-warning hover:bg-yellow-400 hover:text-yellow-400  mx-3"
+                >
                   Signup
                 </Link>
               )}

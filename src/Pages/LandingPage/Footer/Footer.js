@@ -1,14 +1,13 @@
 import React from "react";
 import "./Footer.css";
-import { Form } from "react-bootstrap";
 import logo from "../../../images/logo.png";
 
 const Footer = () => {
   return (
     <div>
       <div
-        className="footer pt-4 text-light"
-        style={{ backgroundColor: "#1f2937" }}
+        className="footer pt-20 text-light bg-gray-800"
+        // style={{ backgroundColor: "#1f2937" }}
       >
         <div className="container">
           <div className="row py-md-5">
@@ -17,10 +16,10 @@ const Footer = () => {
                 <img src={logo} alt="" />
               </div>
               <div className="row col-12 mb-3">
-                <div className="col-12 d-flex gap-5 justify-content-center align-items-center my-2">
+                <div className="col-12 d-flex gap-5 justify-content-center align-items-center my-1">
                   <div>
-                    This website is owned and published by Immediate Media
-                    Company Limited. www.immediatemedia.co.uk
+                    HeroBike is an internationally recognised bike reseller
+                    company based in USA.
                   </div>
                 </div>
                 <div className="col-12 d-flex gap-5 justify-content-center align-items-center">
@@ -31,57 +30,54 @@ const Footer = () => {
                     retailer sites.
                   </div>
                 </div>
-                <div className="col-12 d-flex gap-5 justify-content-center align-items-center">
-                  <div>© Immediate Media Company Ltd 2021.</div>
+                <div className="col-12 d-flex gap-5 ">
+                  <div>© HeroBike Ltd 2021.</div>
                 </div>
               </div>
             </div>
             <div className="col-md-2 col-6">
               <h4 className=" fw-bold text-light mb-lg-3"> Quick Links</h4>
               <p>About us</p>
-              <p>Blog</p>
+
               <p>My Account</p>
               <p>FAQ</p>
               <p>Terms & Conditions</p>
               <p>Contact us</p>
             </div>
             <div className="col-md-2 col-6">
-              <h4 className=" fw-bold text-light mb-lg-3">
-                {" "}
-                Service Categories
-              </h4>
-              <p>Travel</p>
+              <h4 className=" fw-bold text-light mb-lg-3"> Services</h4>
+              <p>Adventures</p>
+              <p>Competetion</p>
+              <p>Accessories</p>
               <p>Lifestyle</p>
-              <p>Fashion</p>
-              <p>Destination</p>
-              <p>Packages</p>
+              <p>Offers</p>
             </div>
             <div className="col-md-3 ">
-              <h4 className="text-center fw-bold text-light mb-lg-3">
+              <h4 className="md:text-center fw-bold text-light mb-lg-3">
                 Contact Us
               </h4>
               <div className="row col-12 mb-3">
-                <div className="col-12 d-flex gap-5 justify-content-center align-items-center my-2">
+                <div className="col-12 d-flex md:gap-5 gap-4 items-center md:justify-content-center md:align-items-center my-1">
                   <div>
-                    <i class="fas fa-envelope fa-lg-3x fa-2x text-light mb-lg-3 my-2"></i>
+                    <i class="fas fa-envelope fa-lg-3x fa-2x text-light mb-lg-3 my-1"></i>
                   </div>
                   <div>
                     <p> help@herobike.com</p>
                   </div>
                 </div>
-                <div className="col-12 d-flex gap-5 justify-content-center align-items-center">
+                <div className="col-12 d-flex md:gap-5 gap-4 items-center md:justify-content-center md:align-items-center my-1">
                   <div>
-                    <i class="fas fa-headset fa-lg-3x fa-2x text-light mb-lg-3 my-2"></i>
+                    <i class="fas fa-headset fa-lg-3x fa-2x text-light mb-lg-3 my-1"></i>
                   </div>
                   <div>
                     <p>+8801629450417</p>
                   </div>
                 </div>
-                <div className="col-12 d-flex gap-5 justify-content-center align-items-center">
+                <div className="col-12 d-flex md:gap-5 gap-4 items-center md:justify-content-center md:align-items-center my-1">
                   <div>
                     <i class="fas fa-map-marker-alt fa-lg-3x fa-2x text-light mb-lg-3"></i>
                   </div>
-                  <div>Newhall, California</div>
+                  <div>Newhall, California. USA</div>
                 </div>
               </div>
             </div>

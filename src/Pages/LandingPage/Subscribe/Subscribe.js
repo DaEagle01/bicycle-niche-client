@@ -3,7 +3,7 @@ import React from "react";
 const Subscribe = () => {
   return (
     <div>
-      <div className="container mt-12 -mb-12 ">
+      <div className="container mt-12 -mb-16 ">
         <div
           class="flex justify-center px-4 text-black bg-yellow-500 sticky py-3"
           style={{ borderRadius: "5px" }}
@@ -22,7 +22,7 @@ const Subscribe = () => {
                     class="m-1 p-2 appearance-none text-gray-700 text-sm focus:outline-none"
                     placeholder="Enter your email"
                   />
-                  <button class="w-full m-1 p-2 text-sm bg-yellow-500 rounded-lg font-semibold uppercase lg:w-auto">
+                  <button class="w-full m-1 p-2 text-sm bg-yellow-500 rounded-lg font-bold uppercase lg:w-auto">
                     subscribe
                   </button>
                 </div>

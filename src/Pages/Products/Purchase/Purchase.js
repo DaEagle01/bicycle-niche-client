@@ -169,8 +169,8 @@ const Purchase = () => {
                 className=" rounded-1 p-2 shadow-md"
                 label="Tickets Type"
               >
-                <option value="Bus Travel">Normal Delivery</option>
-                <option value="Plane Travel">Super Fast Delivery</option>
+                <option value="Normal Delivery">Normal Delivery</option>
+                <option value="Super Fast Delivery">Super Fast Delivery</option>
               </select>
 
               <textarea
