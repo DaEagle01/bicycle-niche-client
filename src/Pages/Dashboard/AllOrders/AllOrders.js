@@ -20,7 +20,7 @@ const AllOrders = () => {
         .then((data) => {
           if (data?.acknowledged) {
             setStatus(true);
-            console.log('order rejected.')
+            console.log("order rejected.");
           }
         });
     }

@@ -14,8 +14,7 @@ const Login = () => {
 
   const location = useLocation();
   const history = useHistory();
-  const redirect_uri =
-    location.state?.from || "/dashboard/myorders" || "/Dashboard/manageorders";
+  const redirect_uri = location.state?.from || "/home";
 
   const handleGoogleLogIn = () => {
     handleGoogleSignIn().then((result) => {
