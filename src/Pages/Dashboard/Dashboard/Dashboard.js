@@ -20,12 +20,12 @@ const Dashboard = () => {
         <div class="w-3/12 bg-white rounded p-3 shadow-lg">
           <div class="md:flex items-center space-x-4 p-2 mb-5">
             <img
-              class="h-12 rounded-full"
+              class="h-12 rounded-full "
               src={user?.photoURL}
               alt={user?.displayName}
             />
             <div className="md:ml-6">
-              <h4 class="font-semibold text-lg text-gray-700 capitalize font-poppins tracking-wide md:ml-6 -ml-6">
+              <h4 class="font-semibold lg:text-lg md:text-lg text-sm text-gray-700 capitalize font-poppins tracking-wide md:ml-6 md:-ml-6 -ml-10  mt-4">
                 {user?.displayName}
               </h4>
               <span class="text-sm tracking-wide flex items-center space-x-1 -ml-6 md:ml-6">
