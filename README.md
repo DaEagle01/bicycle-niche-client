@@ -14,7 +14,7 @@ Live site link: https://bicycle-hub-6bbb8.web.app/
 
 ## 🛠 Technology used
 
-HTML , CSS , JavaScript , Bootsrap , React.js
+HTML, CSS, JavaScript, React.js, Bootsrap, Tailwind CSS, Font Awesome, React Rating, React Hook Form. 
 
 ## Additional Info
 

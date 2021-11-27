@@ -12,7 +12,7 @@ import Review from "../Review/Review";
 import UpdateProduct from "../UpdateProduct/UpdateProduct";
 
 const Dashboard = () => {
-  const { user, admin, logOut } = useAuth();
+  const { user, admin, isLoading, logOut } = useAuth();
   let { path, url } = useRouteMatch();
   return (
     <div className="md:container mx-auto">

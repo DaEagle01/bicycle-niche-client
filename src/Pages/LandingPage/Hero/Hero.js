@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Hero.css";
 
 const Hero = () => {
@@ -24,10 +25,19 @@ const Hero = () => {
                 </p>
                 <div class="flex justify-start md:text-left lg:text-left w-full max-w-2xl gap-2 mx-auto mt-6">
                   <div class="mt-3 rounded-lg sm:mt-0">
-                    <button class="items-center block md:px-5 px-3 py-4 md:py-4 text-lg font-semibold text-center text- transition duration-500 ease-in-out transform bg-yellow-400 lg:px-10 rounded-xl hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-700">
+                    <Link
+                      to="/explore"
+                      style={{
+                        textDecoration: "none",
+                        color: "black",
+                      }}
+                    >
                       {" "}
-                      Get A Bicycle{" "}
-                    </button>
+                      <button class="items-center block md:px-5 px-3 py-4 md:py-4 text-lg font-bold text-center text- transition duration-500 ease-in-out transform bg-yellow-400 lg:px-10 rounded-xl hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-700">
+                        {" "}
+                        Get A Bicycle{" "}
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
