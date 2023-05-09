@@ -7,7 +7,7 @@ const UpdateProduct = () => {
   const { _id } = useParams();
   const [product, setProduct] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${_id}`)
+    fetch(`https://herobike.onrender.com/products/${_id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
@@ -15,8 +15,8 @@ const UpdateProduct = () => {
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
-    fetch(`http://localhost:5000/products/${_id}`, {
+    // console.log(data);
+    fetch(`https://herobike.onrender.com/products/${_id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

@@ -18,8 +18,8 @@ const Review = () => {
   const handleReview = (e) => {
     e.preventDefault();
     data.userImg = user?.photoURL;
-    console.log(data);
-    fetch("http://localhost:5000/reviews", {
+    // console.log(data);
+    fetch("https://herobike.onrender.com/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -29,7 +29,7 @@ const Review = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount) {
-          console.log(data);
+          // console.log(data);
           setSuccess(true);
         }
       });

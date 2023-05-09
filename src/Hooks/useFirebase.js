@@ -26,7 +26,7 @@ const useFirebase = () => {
     setIsLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        console.log(userCredential.user);
+        // console.log(userCredential.user);
         setError("");
         const newUser = { email, displayName: name };
         setUser(newUser);
@@ -44,7 +44,7 @@ const useFirebase = () => {
       })
       .catch((error) => {
         setError(error.message);
-        console.log(error);
+        // console.log(error);
       })
       .finally(() => setIsLoading(false));
   };
@@ -89,15 +89,15 @@ const useFirebase = () => {
 
   const email = user?.email;
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${email}`)
+    fetch(`https://herobike.onrender.com/users/${email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data?.admin));
   }, [user.email]);
 
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    console.log(user);
-    fetch("http://localhost:5000/users", {
+    // console.log(user);
+    fetch("https://herobike.onrender.com/users", {
       method: method,
       headers: { "content-type": "application/json" },
       body: JSON.stringify(user),

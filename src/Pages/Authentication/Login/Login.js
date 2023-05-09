@@ -30,7 +30,7 @@ const Login = () => {
     const newdata = { ...data };
     newdata[field] = value;
     setData(newdata);
-    console.log(data);
+    // console.log(data);
   };
   const handleEmailPassSignIn = (e) => {
     handleSignIn(data.email, data.password, history)

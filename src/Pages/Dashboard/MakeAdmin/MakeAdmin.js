@@ -23,7 +23,7 @@ const MakeAdmin = () => {
     }
     const user = data?.email;
     const userEmail = { user };
-    fetch("http://localhost:5000/users/admin", {
+    fetch("https://herobike.onrender.com/users/admin", {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -33,7 +33,7 @@ const MakeAdmin = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount) {
-          console.log(data);
+          // console.log(data);
           setSuccess(true);
         }
       });

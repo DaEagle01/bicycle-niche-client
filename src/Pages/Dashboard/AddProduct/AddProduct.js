@@ -5,8 +5,8 @@ import { useForm } from "react-hook-form";
 const AddProduct = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
-    fetch("http://localhost:5000/products", {
+    // console.log(data);
+    fetch("https://herobike.onrender.com/products", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

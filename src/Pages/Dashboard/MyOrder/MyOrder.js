@@ -8,14 +8,14 @@ const MyOrder = () => {
   const email = user?.email;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/orders/${email}`)
+    fetch(`https://herobike.onrender.com/orders/${email}`)
       .then((res) => res.json())
       .then((data) => setAllProduct(data));
   }, [status]);
 
   const handleDelete = (_id) => {
     if (window.confirm("Are you sure you want to delete it?")) {
-      fetch(`http://localhost:5000/orders/${_id}`, {
+      fetch(`https://herobike.onrender.com/orders/${_id}`, {
         method: "DELETE",
         headers: { "content-type": "application/json" },
       })
@@ -23,7 +23,7 @@ const MyOrder = () => {
         .then((data) => {
           if (data?.acknowledged) {
             setStatus(true);
-            console.log("order deleted ");
+            // console.log("order deleted ");
           }
         });
     }

@@ -9,7 +9,7 @@ const Purchase = () => {
 
   const [product, setProduct] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${id}`)
+    fetch(`https://herobike.onrender.com/products/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
@@ -21,9 +21,9 @@ const Purchase = () => {
     data.img = product.img;
     data.bikeName = product.name;
     data.status = "pending";
-    console.log(data);
+    // console.log(data);
 
-    fetch(`http://localhost:5000/products/${id}`, {
+    fetch(`https://herobike.onrender.com/products/${id}`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
